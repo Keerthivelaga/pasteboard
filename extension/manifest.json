@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "PasteBoard",
+  "version": "1.0",
+  "description": "Clipboard manager for snippets",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage", "clipboardRead", "clipboardWrite"],
+  "host_permissions": ["<all_urls>"],   
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
